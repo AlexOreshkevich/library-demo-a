@@ -20,6 +20,11 @@ tasks.withType<JavaCompile>().configureEach {
 
 
 dependencies {
+
+  // consuming platform helps for automatic management
+  // your will get versions from dependency constraints
+  api(platform("com.google:sdk-demo:${libs.versions.sdk.get()}"))
+
   // This dependency is exported to consumers, that is to say found on their compile classpath.
   api("org.apache.commons:commons-math3:3.6.1")
 
